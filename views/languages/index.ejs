@@ -1,0 +1,15 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Languages</h1>
+  <ul>
+    <% languages.forEach(language => { %>
+      <li>
+        <a href="/languages/<%= language._id %>"><%= language.language %></a>
+      </li>
+    <% }) %>  
+  </ul>
+</main>
+
+<%- include('../partials/footer') %>
