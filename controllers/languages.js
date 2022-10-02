@@ -14,6 +14,19 @@ function index(req, res){
   })
 }
 
+function create(req, res){
+  req.body.conjugation = !!req.body.conjugation
+  Language.create(req.body)
+  .then(language => {
+    res.redirect('/languages')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/languages')
+  })
+}
+
 export {
   index,
+  create,
 }

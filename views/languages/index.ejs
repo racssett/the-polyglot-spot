@@ -1,15 +1,37 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<main>
+<section>
   <h1>Languages</h1>
   <ul>
     <% languages.forEach(language => { %>
       <li>
         <a href="/languages/<%= language._id %>"><%= language.language %></a>
       </li>
-    <% }) %>  
+    <% }) %>
   </ul>
-</main>
+  <% if (user) { %> 
+    <h2>Add a Language</h2>
+    <form action="/languages" method="POST">
+      <label>
+        Language:
+        <input type="text" name="language" autocomplete="off">
+      </label>
+      <label>
+        Difficulty:
+        <input type="text" name="difficulty" autocomplete="off">
+      </label>
+      <label>
+        Sentence Structure:
+        <input type="text" name="structure" autocomplete="off">
+      </label>
+      <label>
+        Conjugations?
+        <input type="checkbox" name="conjugation">
+      </label>
+      <button type="submit">Add Language</button>
+    </form>
+  <% } %> 
+</section>
 
 <%- include('../partials/footer') %>
