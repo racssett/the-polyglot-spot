@@ -10,6 +10,45 @@
     >
   </div>
   <h1><%= profile.name %></h1>
+  <% if (isSelf) { %>
+    <h2>Add a Language:</h2>
+    <form action="/profiles/<%= profile._id %>/languages" method="POST">
+      <label>
+        Language:
+        <input type="text" name="language" autocomplete="off">
+      </label>
+      <label>
+        Proficiency:
+        <input type="text" name="proficiency" autocomplete="off">
+      </label>
+      <label>
+        Time:
+        <input type="number" name="time" autocomplete="off">
+      </label>
+      <select name="unit">
+        <option value="day">days</option>
+        <option value="month">month</option>
+        <option value="months">months</option>
+        <option value="year">year</option>
+        <option value="years">years</option>
+      </select>
+      <button type="submit">Add Language</button>
+    </form>
+  <% } %>
+  <% if (profile.languagesSpoken.length) { %>
+    <h2>
+      <%= isSelf ? "You are a language learner! Here's what you're studying:" : `${profile.name} is a language learner! Here's what they're studying:` %>
+    </h2>
+    <% profile.languagesSpoken.forEach(language => { %>
+      <h3>
+        <%= isSelf ? "You speak" : `${profile.name} speaks` %> <%= language.language %> at a <%= language.proficiency %> level after <%= language.time %> <%= language.unit %> of studying.   
+      </h3>
+    <% }) %>
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You haven't" : `${profile.name} hasn't` %> started their language journey yet. 
+    </h2>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

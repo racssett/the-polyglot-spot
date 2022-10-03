@@ -6,6 +6,7 @@ const languageLearnerSchema = new Schema({
   language: String,
   proficiency: String,
   time: Number,
+  unit: String,
 }, {
   timestamps: true
 })

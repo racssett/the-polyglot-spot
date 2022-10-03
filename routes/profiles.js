@@ -6,6 +6,7 @@ const router = Router()
 
 router.get('/', profilesCtrl.index)
 router.get('/:id', profilesCtrl.show)
+router.post('/:id/languages', isLoggedIn, profilesCtrl.createLanguage)
 
 export {
   router

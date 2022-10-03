@@ -14,18 +14,24 @@ function index(req, res){
   })
 }
 
-// function create(req, res){
-//   req.body.owner = req.user.profile._id
-//   req.body.conjugation = !!req.body.conjugation
-//   Language.create(req.body)
-//   .then(language => {
-//     res.redirect('/languages')
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/languages')
-//   })
-// }
+function createLanguage(req, res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.languagesSpoken.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.use.profile._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
 
 function show(req, res){
   Profile.findById(req.params.id)
@@ -43,62 +49,8 @@ function show(req, res){
   })
 }
 
-// function edit(req, res) {
-//   Language.findById(req.params.id)
-//   .then(language => {
-//     res.render('languages/edit', {
-//       language,
-//       title: "edit"
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/languages')
-//   })
-// }
-
-// function update(req, res) {
-//   Language.findById(req.params.id)
-//   .then(language => {
-//     if(language.owner.equals(req.user.profile._id)){
-//       req.body.conjugation = !!req.body.conjugation
-//       language.updateOne(req.body, { new: true })
-//       .then(() => {
-//         res.redirect(`/languages/${language._id}`)
-//       })
-//     } else {
-//       throw new Error ('Not Authorized')
-//     }
-//   })
-//   .catch(err =>{
-//     console.log(err)
-//     res.redirect('/languages')
-//   })
-// }
-
-// function deleteLanguage(req, res){
-//   Language.findById(req.params.id)
-//   .then(language => {
-//     if (language.owner.equals(req.user.profile._id)) {
-//       language.delete()
-//       .then(() => {
-//         res.redirect('/languages')
-//       })
-//     } else {
-//       throw new Error ("Please do not attempt to delete other user's languages")
-//     }
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/languages')
-//   })
-// }
-
 export {
   index,
-  // create,
+  createLanguage,
   show,
-  // edit,
-  // deleteLanguage as delete,
-  // update,
 }
