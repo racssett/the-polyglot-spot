@@ -1,0 +1,45 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit <%= language.language %></h1>
+  <form action="/languages/<%= language._id %>?_method=PUT" method="POST">
+    <label>
+      Language: 
+      <input 
+        type="text"
+        name="language" 
+        value="<%= language.language %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Difficulty: 
+      <input 
+        type="text"
+        name="difficulty" 
+        value="<%= language.difficulty %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Sentence Structure: 
+      <input 
+        type="text"
+        name="structure" 
+        value="<%= language.structure %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Conjugations?
+      <input 
+        type="checkbox" 
+        name="conjugation" 
+				<%= language.conjugation ? "checked" : "" %> 
+      >
+    </label>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

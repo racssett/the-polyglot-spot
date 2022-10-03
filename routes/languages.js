@@ -6,7 +6,7 @@ const router = Router()
 
 router.get('/', languagesCtrl.index)
 router.get('/:id', languagesCtrl.show)
-// router.get('/:id/edit', isLoggedIn, languagesCtrl.edit)
+router.get('/:id/edit', isLoggedIn, languagesCtrl.edit)
 router.post('/', isLoggedIn, languagesCtrl.create)
 router.delete('/:id', isLoggedIn, languagesCtrl.delete)
 

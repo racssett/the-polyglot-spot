@@ -13,6 +13,9 @@
   </section>
   <section>
     <% if (language.owner.equals(user?.profile._id)) { %>
+      <a href="/languages/<%= language._id %>/edit">
+        <button class="btn" type="submit">Edit Language</button>
+      </a>
       <form action="/languages/<%= language._id %>?_method=DELETE" method="POST">
         <button class="btn" type="submit">Delete Language</button>
       </form>

@@ -43,19 +43,19 @@ function show(req, res){
   })
 }
 
-// function edit(req, res) {
-//   Language.findById(req.params.id)
-//   .then(language => {
-//     res.render('languages/edit', {
-//       language,
-//       title: "edit"
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/languages')
-//   })
-// }
+function edit(req, res) {
+  Language.findById(req.params.id)
+  .then(language => {
+    res.render('languages/edit', {
+      language,
+      title: "edit"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/languages')
+  })
+}
 
 function deleteLanguage(req, res){
   Language.findById(req.params.id)
@@ -79,6 +79,6 @@ export {
   index,
   create,
   show,
-  // edit,
+  edit,
   deleteLanguage as delete,
 }
