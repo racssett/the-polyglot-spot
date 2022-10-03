@@ -2,9 +2,18 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const languageLearnerSchema = new Schema({
+  language: String,
+  proficiency: String,
+  time: Number,
+}, {
+  timestamps: true
+})
+
 const profileSchema = new Schema({
   name: String,
   avatar: String,
+  languagesSpoken: [languageLearnerSchema]
 }, {
   timestamps: true
 })
