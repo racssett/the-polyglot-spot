@@ -7,6 +7,7 @@ const languageSchema = new Schema({
   difficulty: String,
   structure: String,
   conjugation: Boolean,
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true
 })

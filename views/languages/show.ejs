@@ -11,6 +11,13 @@
     <div>Conjugation:</div>
     <div><%= language.conjugation ? 'Yes' : 'No' %></div>
   </section>
+  <section>
+    <% if (language.owner.equals(user?.profile._id)) { %>
+      <form action="/languages/<%= language._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete Language</button>
+      </form>
+    <% } %>
+  </section>
 </main>
 
 <%- include('../partials/footer') %>
