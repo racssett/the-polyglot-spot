@@ -42,11 +42,20 @@
     <% profile.languagesSpoken.forEach(language => { %>
       <h3>
         <%= isSelf ? "You speak" : `${profile.name} speaks` %> <%= language.language %> at a <%= language.proficiency %> level after <%= language.time %> <%= language.unit %> of studying.   
+        <% if (isSelf) { %>
+          <form 
+            action="/profiles/languages/<%= language._id %>?_method=DELETE"
+            method="POST"
+            style="display: inline-block;"
+          >
+            <button type="submit">Delete <%= language.language %></button>
+          </form>
+        <% } %>
       </h3>
     <% }) %>
   <% } else { %>
     <h2>
-      <%= isSelf ? "You haven't" : `${profile.name} hasn't` %> started their language journey yet. 
+      <%= isSelf ? "You haven't started your language journey yet." : `${profile.name} hasn't started their language journey yet.` %>  
     </h2>
   <% } %>
 </main>
