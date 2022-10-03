@@ -26,7 +26,23 @@ function create(req, res){
   })
 }
 
+function show(req, res){
+  Language.findById(req.params.id)
+  .then(language => {
+    console.log(language)
+    res.render('languages/show', {
+      language,
+      title: 'Language'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.render('/languages')
+  })
+}
+
 export {
   index,
   create,
+  show,
 }

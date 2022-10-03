@@ -1,0 +1,16 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= language.language %></h1>
+  <section>
+    <div>Difficulty:</div>
+    <div><%= language.difficulty %></div>
+    <div>Sentence Structure:</div>
+    <div><%= language.structure %></div>
+    <div>Conjugation:</div>
+    <div><%= language.conjugation ? 'Yes' : 'No' %></div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
