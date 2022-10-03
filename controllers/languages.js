@@ -57,6 +57,25 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Language.findById(req.params.id)
+  .then(language => {
+    if(language.owner.equals(req.user.profile._id)){
+      req.body.conjugation = !!req.body.conjugation
+      language.updateOne(req.body, { new: true })
+      .then(() => {
+        res.redirect(`/languages/${language._id}`)
+      })
+    } else {
+      throw new Error ('Not Authorized')
+    }
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect('/languages')
+  })
+}
+
 function deleteLanguage(req, res){
   Language.findById(req.params.id)
   .then(language => {
@@ -81,4 +100,5 @@ export {
   show,
   edit,
   deleteLanguage as delete,
+  update,
 }
