@@ -3,6 +3,27 @@
 
 <section>
   <h1>Countries</h1>
+  <ul>
+    <% countries.forEach(country => { %>
+      <li>
+        <a href="/countries/<%= country._id %>"><%= country.country %></a>
+      </li>
+    <% }) %>
+  </ul>
+  <% if (user) { %> 
+    <h2>Add a Country</h2>
+    <form action="/countries" method="POST">
+      <label>
+        Country:
+        <input type="text" name="country" autocomplete="off">
+      </label>
+      <label>
+        Native Languages:
+        <input type="text" name="nativeLanguages" autocomplete="off">
+      </label>
+      <button type="submit">Add Country</button>
+    </form>
+  <% } %> 
 </section>
 
 <%- include('../partials/footer') %>

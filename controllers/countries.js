@@ -14,6 +14,20 @@ function index(req, res){
   })
 }
 
+function create(req, res){
+  req.body.owner = req.user.profile._id
+  Country.create(req.body)
+  .then(country => {
+    res.redirect('/countries')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+
 export {
-  index
+  index,
+  create,
 }
