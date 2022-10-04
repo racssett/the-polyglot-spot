@@ -56,9 +56,28 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Country.findById(req.params.id)
+  .then(country => {
+    if(country.owner.equals(req.user.profile._id)){
+      country.updateOne(req.body, { new: true })
+      .then(() => {
+        res.redirect(`/countries/${country._id}`)
+      })
+    } else {
+      throw new Error ('Not Authorized')
+    }
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   create,
   show,
   edit,
+  update,
 }

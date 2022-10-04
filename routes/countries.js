@@ -8,6 +8,7 @@ router.get('/', countriesCtrl.index)
 router.get('/:id', countriesCtrl.show)
 router.get('/:id/edit', isLoggedIn, countriesCtrl.edit)
 router.post('/', isLoggedIn, countriesCtrl.create)
+router.put('/:id', isLoggedIn, countriesCtrl.update)
 
 export {
   router
