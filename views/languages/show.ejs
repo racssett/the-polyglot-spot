@@ -21,6 +21,37 @@
       </form>
     <% } %>
   </section>
+  <h2>Tips for learning <%= language.language %></h2>
+  <form 
+    action="/languages/<%= language._id %>/tips"
+    method="POST"
+  >
+    <label for="content-textarea">Tip:</label>
+    <textarea name="content" id="content-textarea"></textarea>
+    <button type="submit">Add Tip</button>
+  </form>
+  <% if (language.tips.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Tip</th>
+          <th>Posted By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% language.tips.forEach(function(tip) { %>
+          <tr>
+            <td><%= tip.createdAt.toLocaleDateString() %></td>
+            <td><%= tip.content %></td>
+            <td><%= tip.creator %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Tips Yet</h3>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

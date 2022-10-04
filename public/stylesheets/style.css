@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #E5C3D1;
+  background-color: #AF42AE;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
@@ -40,25 +40,26 @@ main {
 }
 
 #first-circle {
-  background-color: #EF798A;
-  width: 350px;
-  height: 350px;
+  background-color: #D6BBC0;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   margin: auto;
   padding: 10px;
-  top: 3%;
+  top: -1%;
+  font-size: xx-large;
 }
 
 #second-circle {
-  background-color: #F7A9A8;
-  width: 600px;
-  height: 600px;
+  background-color: #D0A3BF;
+  width: 620px;
+  height: 620px;
   border-radius: 50%;
   top: -10%;
 }
 
 #third-circle {
-  background-color: #7D82B8;
+  background-color: #C585B3;
   width: 855px;
   height: 855px;
   border-radius: 50%;
@@ -66,7 +67,7 @@ main {
 }
 
 #fourth-circle {
-  background-color: #613F75;
+  background-color: #BC69AA;
   width: 1100px;
   height: 1100px;
   border-radius: 50%;

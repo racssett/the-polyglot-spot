@@ -94,6 +94,29 @@ function deleteLanguage(req, res){
   })
 }
 
+function createTip(req, res) {
+  console.log("LANGUAGE ID", req.params.id)
+  console.log("REQ.BODY", req.body)
+  req.body.creator = req.user.profile._id
+  Language.findById(req.params.id)
+  .populate("creator")
+  .then(language => {
+    language.tips.push(req.body)
+    language.save()
+    .then(() => {
+      res.redirect(`/languages/${language._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   create,
@@ -101,4 +124,5 @@ export {
   edit,
   deleteLanguage as delete,
   update,
+  createTip,
 }
