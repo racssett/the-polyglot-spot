@@ -97,9 +97,11 @@ function deleteLanguage(req, res){
 function createTip(req, res) {
   console.log("LANGUAGE ID", req.params.id)
   console.log("REQ.BODY", req.body)
-  req.body.creator = req.user.profile._id
   Language.findById(req.params.id)
-  .populate("creator")
+  // .populate({
+  //   path: 'tips',
+  //   populate: ''
+  // })
   .then(language => {
     language.tips.push(req.body)
     language.save()

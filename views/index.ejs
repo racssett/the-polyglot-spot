@@ -3,13 +3,20 @@
 <body>
 <main>
 <div class="circle-container">
-  <div id="fourth-circle" class="circle">placeholder</div>
-  <div id="third-circle" class="circle">    
+  <div id="fourth-circle" class="circle">
     <a 
     href="/profiles" <%- title === 'Profiles' ? 'class="active"' : '' %>
     >
     Profiles
-    </a></div>
+    </a>
+  </div>
+  <div id="third-circle" class="circle">    
+    <a 
+    href="/countries" <%- title === 'Countries' ? 'class="active"' : '' %>
+    >
+    Countries
+    </a>
+  </div>
   <div id="second-circle" class="circle">
     <a 
     href="/languages" <%- title === 'Languages' ? 'class="active"' : '' %>
