@@ -26,8 +26,24 @@ function create(req, res){
   })
 }
 
+function show(req, res){
+  Country.findById(req.params.id)
+  .populate("owner")
+  .then(country => {
+    console.log(country)
+    res.render('countries/show', {
+      country,
+      title: 'Country'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
 
 export {
   index,
   create,
+  show,
 }

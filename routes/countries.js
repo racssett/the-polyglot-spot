@@ -5,6 +5,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 router.get('/', countriesCtrl.index)
+router.get('/:id', countriesCtrl.show)
 router.post('/', isLoggedIn, countriesCtrl.create)
 
 export {
