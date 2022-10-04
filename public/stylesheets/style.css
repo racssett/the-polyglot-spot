@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #1a1a1a;
+  background-color: #E5C3D1;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
@@ -33,9 +33,55 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
 .right {
   margin-left: auto;
+}
+
+#first-circle {
+  background-color: #EF798A;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  margin: auto;
+  padding: 10px;
+  top: 3%;
+}
+
+#second-circle {
+  background-color: #F7A9A8;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  top: -10%;
+}
+
+#third-circle {
+  background-color: #7D82B8;
+  width: 855px;
+  height: 855px;
+  border-radius: 50%;
+  top: -20%;
+}
+
+#fourth-circle {
+  background-color: #613F75;
+  width: 1100px;
+  height: 1100px;
+  border-radius: 50%;
+  top: -30%;
+}
+
+.circle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -14,7 +14,7 @@ const languageLearnerSchema = new Schema({
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  languagesSpoken: [languageLearnerSchema]
+  languagesSpoken: [languageLearnerSchema],
 }, {
   timestamps: true
 })

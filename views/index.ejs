@@ -1,16 +1,24 @@
 <%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
-
+</head>
+<body>
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+<div class="circle-container">
+  <div id="fourth-circle" class="circle">placeholder</div>
+  <div id="third-circle" class="circle">    
+    <a 
+    href="/profiles" <%- title === 'Profiles' ? 'class="active"' : '' %>
+    >
+    Profiles
+    </a></div>
+  <div id="second-circle" class="circle">
+    <a 
+    href="/languages" <%- title === 'Languages' ? 'class="active"' : '' %>
+    >
+    Languages
+    </a>
+  </div>
+  <div id="first-circle" class="circle">The Polyglot Spot</div>
+  </div>
 </main>
 
 <%- include('./partials/footer') %>
