@@ -6,6 +6,7 @@ const router = Router()
 
 router.get('/', countriesCtrl.index)
 router.get('/:id', countriesCtrl.show)
+router.get('/:id/edit', isLoggedIn, countriesCtrl.edit)
 router.post('/', isLoggedIn, countriesCtrl.create)
 
 export {

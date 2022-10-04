@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit <%= country.country %></h1>
+  <form action="/countries/<%= country._id %>?_method=PUT" method="POST">
+    <label>
+      Country: 
+      <input 
+        type="text"
+        name="country" 
+        value="<%= country.country %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Native Languages: 
+      <input 
+        type="text"
+        name="nativeLanguages" 
+        value="<%= country.nativeLanguages %>" 
+        autocomplete="off"
+      >
+    </label>
+    <button type="submit">Edit <%= country.country %></button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

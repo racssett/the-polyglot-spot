@@ -7,6 +7,13 @@
     <div>Native Languages:</div>
     <div><%= country.nativeLanguages %></div>
   </section>
+  <section>
+    <% if (country.owner.equals(user?.profile._id)) { %>
+      <a href="/countries/<%= country._id %>/edit">
+        <button class="btn" type="submit">Edit Country</button>
+      </a>
+    <% } %>
+  </section>
 </main>
 
 <%- include('../partials/footer') %>

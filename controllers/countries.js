@@ -42,8 +42,23 @@ function show(req, res){
   })
 }
 
+function edit(req, res) {
+  Country.findById(req.params.id)
+  .then(country => {
+    res.render('countries/edit', {
+      country,
+      title: "edit"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   create,
   show,
+  edit,
 }
