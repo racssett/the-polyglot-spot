@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const tipSchema = new Schema({
   content: String,
-  creator: {type: Schema.Types.ObjectId, ref: "Profile"},
+  creator: {type: Schema.Types.ObjectId, ref: "Profile"}, //icebox
 }, {
   timestamps: true
 })

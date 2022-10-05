@@ -98,10 +98,6 @@ function createTip(req, res) {
   console.log("LANGUAGE ID", req.params.id)
   console.log("REQ.BODY", req.body)
   Language.findById(req.params.id)
-  // .populate({
-  //   path: 'tips',
-  //   populate: ''
-  // })
   .then(language => {
     language.tips.push(req.body)
     language.save()

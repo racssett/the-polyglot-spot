@@ -4,15 +4,56 @@ body {
   text-shadow: 1px 1px gray;
 }
 
-section {
+.language-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.languages {
   display: flex;
   flex-direction: column;
   justify-content: left;
   margin: 30px 30px;
 }
 
+.languages-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.language-list {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
 .input-container {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+form {
   display: flex;
   flex-direction: column;
   justify-content: left;
+}
+
+form > button {
+  width: 180px;
+  margin-top: 10px;
+}
+
+label > input {
+  display: flex;
+  margin-top: 3px;
+}
+
+form > label {
+  margin: 5px 5px 8px 15px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 10px;
 }
