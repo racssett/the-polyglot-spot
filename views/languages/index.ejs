@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/languages/index.css" />
 <%- include('../partials/nav') %>
 
 <section>
@@ -12,25 +13,27 @@
   </ul>
   <% if (user) { %> 
     <h2>Add a Language</h2>
-    <form action="/languages" method="POST">
-      <label>
-        Language:
-        <input type="text" name="language" autocomplete="off">
-      </label>
-      <label>
-        Difficulty:
-        <input type="text" name="difficulty" autocomplete="off">
-      </label>
-      <label>
-        Sentence Structure:
-        <input type="text" name="structure" autocomplete="off">
-      </label>
-      <label>
-        Conjugations?
-        <input type="checkbox" name="conjugation">
-      </label>
-      <button type="submit">Add Language</button>
-    </form>
+    <div class="input-container">
+      <form action="/languages" method="POST">
+        <label>
+          Language:
+          <input type="text" name="language" autocomplete="off">
+        </label>
+        <label>
+          Difficulty:
+          <input type="text" name="difficulty" autocomplete="off">
+        </label>
+        <label>
+          Sentence Structure:
+          <input type="text" name="structure" autocomplete="off">
+        </label>
+        <label>
+          Conjugations?
+          <input type="checkbox" name="conjugation">
+        </label>
+        <button type="submit">Add Language</button>
+      </form>
+    </div>
   <% } %> 
 </section>
 

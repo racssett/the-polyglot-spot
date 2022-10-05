@@ -16,7 +16,6 @@ function index(req, res){
 
 function createLanguage(req, res){
   Profile.findById(req.user.profile._id)
-  req.body.owner = req.user.profile._id
   .then(profile => {
     profile.languagesSpoken.push(req.body)
     profile.save()
@@ -25,12 +24,12 @@ function createLanguage(req, res){
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/')
+      res.redirect('/profiles')
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/')
+    res.redirect('/profiles')
   })
 }
 

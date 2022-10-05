@@ -1,0 +1,18 @@
+body {
+  background-color: #D0A3BF;
+  color: white;
+  text-shadow: 1px 1px gray;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin: 30px 30px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
