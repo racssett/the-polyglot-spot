@@ -16,8 +16,27 @@ body {
   font-size: 50px;
 }
 
-.title-show {
+.profile-name {
   font-family: 'Satisfy', cursive;
-  font-size: 38px;
-  margin-bottom: 8px;
+  font-size: 32px;
+  margin-bottom: 2px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  width: 375px;
+  background-color: #A55D95;
+  padding: 15px;
+  border-radius: 25px;
+  margin: 15px 0px;
+}
+
+.card:hover {
+  background-color: #955588;
+}
+
+.card > img {
+  max-width: 70px;
+  max-height: 70px;
 }
