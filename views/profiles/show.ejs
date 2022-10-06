@@ -44,9 +44,6 @@
       <h3>
         <%= isSelf ? "You speak" : `${profile.name} speaks` %> <%= language.language %> at a <%= language.proficiency %> level after <%= language.time %> <%= language.unit %> of studying.   
         <% if (isSelf) { %>
-          <a href="/profiles/<%= profile._id %>/language/<%= language._id %>">
-            <button class="btn" type="submit">Edit Language</button>
-          </a>
           <form 
             action="/profiles/languages/<%= language._id %>?_method=DELETE"
             method="POST"
