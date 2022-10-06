@@ -24,4 +24,4 @@ ERD:
 
 ## Future Plans
 
-In the future I would like users to be able to languages from the Language page to an 'Interests' list on their profile. I would also like users to be able to edit the languages currently listen on their profile.
+In the future I would like users to be able to languages from the Language page to an 'Interests' list on their profile. I would also like users to be able to edit the languages currently listen on their profile. Lastly, I would like users to be able to add recommendations on their profile.
