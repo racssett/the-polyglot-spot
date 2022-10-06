@@ -6,34 +6,24 @@
   <div class="language-container">
     <h1 class="title"><%= language.language %></h1>
     <section class="language-info">
-      <div>Difficulty:</div>
+      <div class="info-tag">Difficulty:</div>
       <div><%= language.difficulty %></div>
-      <div>Sentence Structure:</div>
+      <div class="info-tag">Sentence Structure:</div>
       <div><%= language.structure %></div>
-      <div>Conjugation:</div>
+      <div class="info-tag">Conjugation:</div>
       <div><%= language.conjugation ? 'Yes' : 'No' %></div>
     </section>
     <section class="buttons">
       <% if (language.owner.equals(user?.profile._id)) { %>
         <a href="/languages/<%= language._id %>/edit">
-          <button class="btn" type="submit">Edit Language</button>
+          <button type="submit">Edit Language</button>
         </a>
         <form action="/languages/<%= language._id %>?_method=DELETE" method="POST">
-          <button class="btn" type="submit">Delete Language</button>
+          <button class ="delete-btn" type="submit">Delete Language</button>
         </form>
       <% } %>
     </section>
-    <h2 class="title-show">Tips for learning <%= language.language %></h2>
-    <% if (user) { %>
-      <form 
-        action="/languages/<%= language._id %>/tips"
-        method="POST"
-      >
-        <label for="content-textarea">Tip:</label>
-        <textarea name="content" id="content-textarea"></textarea>
-        <button type="submit">Add Tip</button>
-      </form>
-    <% } %>
+    <h2 class="title-show" id="title-show-tips">Tips for learning <%= language.language %></h2>
     <% if (language.tips.length) { %>
       <table>
         <thead>
@@ -53,6 +43,18 @@
       </table>
     <% } else { %>
       <h3>No Tips Yet</h3>
+    <% } %>
+        <% if (user) { %>
+      <div class="tip-form">
+        <form 
+          action="/languages/<%= language._id %>/tips"
+          method="POST"
+        >
+          <label for="content-textarea">Tip:</label>
+          <textarea name="content" id="content-textarea"></textarea>
+          <button class="tip-btn" type="submit">Add Tip</button>
+        </form>
+      </div>
     <% } %>
   </div>
 </main>

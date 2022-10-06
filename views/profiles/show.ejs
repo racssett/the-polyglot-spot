@@ -16,15 +16,15 @@
     <form action="/profiles/<%= profile._id %>/languages" method="POST">
       <label>
         Language:
-        <input type="text" name="language" autocomplete="off">
+        <input type="text" name="language" autocomplete="off" required>
       </label>
       <label>
         Proficiency:
-        <input type="text" name="proficiency" autocomplete="off">
+        <input type="text" name="proficiency" autocomplete="off" required>
       </label>
       <label>
         Time:
-        <input type="number" name="time" autocomplete="off">
+        <input type="number" name="time" autocomplete="off" required>
       </label>
       <select name="unit">
         <option value="day">days</option>

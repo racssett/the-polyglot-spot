@@ -16,7 +16,6 @@ body {
 .languages {
   display: flex;
   flex-direction: column;
-  justify-content: left;
   margin: 30px 30px;
   font-family: 'Lato', sans-serif;
   font-size: larger;
@@ -25,46 +24,53 @@ body {
 .title {
   font-family: 'Satisfy', cursive;
   font-size: 50px;
+  margin-top: 3px;
 }
 
 .title-show {
   font-family: 'Satisfy', cursive;
   font-size: 38px;
-  margin-bottom: 8px;
+  margin-top: 8px;
+  padding-top: 6px;
 }
 
 .languages-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.language-list {
-  grid-column-start: 1;
-  grid-column-end: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:left;
 }
 
 .language-info {
   margin: 10px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.input-container {
-  grid-column-start: 2;
-  grid-column-end: 2;
+.language-info > div {
+  margin: 5px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  justify-content: center;
+  align-items: left;
 }
 
-form > button {
-  width: 180px;
+.submit-button {
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 343px;
+}
+
+.submit-button > button {
+  width: 180px;
 }
 
 label > input {
-  display: flex;
   margin-top: 3px;
 }
 
@@ -74,6 +80,47 @@ form > label {
 
 .buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 10px;
+  margin-top: 12px;
+}
+
+.buttons > a {
+  display: flex;
+  justify-content: center;
+}
+
+form > button {
+  width: fit-content;
+}
+
+table {
+  max-width: 400px;
+  margin-top: 12px;
+}
+
+.tip-btn {
   margin-top: 10px;
+}
+
+th {
+  font-size: larger;
+  text-decoration: underline;
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-bottom: 7px;
+}
+
+td {
+  padding: 10px;
+}
+
+#title-show-tips {
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.tip-form {
+  margin-top: 8px;
 }

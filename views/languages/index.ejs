@@ -15,26 +15,28 @@
       </ul>
     </div>
     <% if (user) { %> 
+      <h2 class="title">Add a Language</h2>
       <div class="input-container">
-      <h2 class="title">Add a Language</h2>  
         <form action="/languages" method="POST">
           <label>
             Language:
-            <input type="text" name="language" autocomplete="off" class="input">
+            <input type="text" name="language" autocomplete="off" class="input" required>
           </label>
           <label>
             Difficulty:
-            <input type="text" name="difficulty" autocomplete="off" class="input">
+            <input type="text" name="difficulty" autocomplete="off" class="input" required>
           </label>
           <label>
             Sentence Structure:
-            <input type="text" name="structure" autocomplete="off" class="input">
+            <input type="text" name="structure" autocomplete="off" class="input" required>
           </label>
           <label>
             Conjugations?
             <input type="checkbox" name="conjugation" class="input">
           </label>
-          <button type="submit">Add Language</button>
+          <div class="submit-button">
+            <button type="submit">Add Language</button>
+          </div>
         </form>
       </div>
     <% } %> 
