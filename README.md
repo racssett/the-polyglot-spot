@@ -15,10 +15,12 @@
 ## Planning Material
 
 Wireframes:
-![Polyglot Spot wireframes] (./assets/wireframes.png)
+
+![Polyglot Spot wireframes](./assets/wireframes.png)
 
 ERD:
-![Polyglot Spot ERD] (./assets/erd.png)
+
+![Polyglot Spot ERD](./assets/erd.png)
 
 ## Future Plans
 
