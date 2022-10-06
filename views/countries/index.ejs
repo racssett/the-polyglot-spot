@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="/stylesheets/countries/index.css" />
 <%- include('../partials/nav') %>
 
-<section>
-  <h1>Countries</h1>
+<section class="countries">
+  <h1 class="title">Countries</h1>
   <ul>
     <% countries.forEach(country => { %>
       <li>
@@ -12,7 +12,7 @@
     <% }) %>
   </ul>
   <% if (user) { %> 
-    <h2>Add a Country</h2>
+    <h2 class="title">Add a Country</h2>
     <form action="/countries" method="POST">
       <label>
         Country:

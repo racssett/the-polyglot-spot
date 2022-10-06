@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/stylesheets/profiles/index.css">
 <%- include('../partials/nav') %>
 
-<main>
+<main class="profiles">
   <div>
     <img
       class="profile-avatar"
@@ -10,9 +10,9 @@
       alt="<%= profile.name %>'s avatar"
     >
   </div>
-  <h1><%= profile.name %></h1>
+  <h1 class="title"><%= profile.name %></h1>
   <% if (isSelf) { %>
-    <h2>Add a Language:</h2>
+    <h2 class="title-show">Add a Language:</h2>
     <form action="/profiles/<%= profile._id %>/languages" method="POST">
       <label>
         Language:

@@ -3,18 +3,20 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= country.country %></h1>
-  <section>
-    <div>Official Languages:</div>
-    <div><%= country.nativeLanguages %></div>
-  </section>
-  <section>
-    <% if (country.owner.equals(user?.profile._id)) { %>
-      <a href="/countries/<%= country._id %>/edit">
-        <button class="btn" type="submit">Edit Country</button>
-      </a>
-    <% } %>
-  </section>
+  <div class="countries">
+    <h1 class="title"><%= country.country %></h1>
+    <section>
+      <div>Official Languages:</div>
+      <div><%= country.nativeLanguages %></div>
+    </section>
+    <section>
+      <% if (country.owner.equals(user?.profile._id)) { %>
+        <a href="/countries/<%= country._id %>/edit">
+          <button class="btn" type="submit">Edit Country</button>
+        </a>
+      <% } %>
+    </section>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>

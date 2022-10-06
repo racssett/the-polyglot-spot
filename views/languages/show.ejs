@@ -4,7 +4,7 @@
 
 <main>
   <div class="language-container">
-    <h1><%= language.language %></h1>
+    <h1 class="title"><%= language.language %></h1>
     <section class="language-info">
       <div>Difficulty:</div>
       <div><%= language.difficulty %></div>
@@ -23,7 +23,7 @@
         </form>
       <% } %>
     </section>
-    <h2>Tips for learning <%= language.language %></h2>
+    <h2 class="title-show">Tips for learning <%= language.language %></h2>
     <% if (user) { %>
       <form 
         action="/languages/<%= language._id %>/tips"
@@ -40,7 +40,6 @@
           <tr>
             <th>Date</th>
             <th>Tip</th>
-            <th>Posted By</th>
           </tr>
         </thead>
         <tbody>
@@ -48,7 +47,6 @@
             <tr>
               <td><%= tip.createdAt.toLocaleDateString() %></td>
               <td><%= tip.content %></td>
-              <td><%= tip.creator %></td>
             </tr>
           <% }) %>
         </tbody>

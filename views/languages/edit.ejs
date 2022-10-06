@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="/stylesheets/languages/index.css" />
 <%- include('../partials/nav') %>
 
-<section>
-  <h1>Edit <%= language.language %></h1>
+<section class="languages">
+  <h1 class="title">Edit <%= language.language %></h1>
   <form action="/languages/<%= language._id %>?_method=PUT" method="POST">
     <label>
       Language: 
