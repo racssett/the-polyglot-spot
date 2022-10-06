@@ -3,28 +3,34 @@
 <%- include('../partials/nav') %>
 
 <section class="countries">
-  <h1 class="title">Edit <%= country.country %></h1>
-  <form action="/countries/<%= country._id %>?_method=PUT" method="POST">
-    <label>
-      Country: 
-      <input 
-        type="text"
-        name="country" 
-        value="<%= country.country %>" 
-        autocomplete="off"
-      >
-    </label>
-    <label>
-      Native Languages: 
-      <input 
-        type="text"
-        name="nativeLanguages" 
-        value="<%= country.nativeLanguages %>" 
-        autocomplete="off"
-      >
-    </label>
-    <button type="submit">Edit <%= country.country %></button>
-  </form>
+  <div class="country-container">
+    <h1 class="title">Edit <%= country.country %></h1>
+    <div class="form-container">
+      <form action="/countries/<%= country._id %>?_method=PUT" method="POST">
+        <label>
+          Country: 
+          <input 
+            type="text"
+            name="country" 
+            value="<%= country.country %>" 
+            autocomplete="off"
+          >
+        </label>
+        <label>
+          Native Languages: 
+          <input 
+            type="text"
+            name="nativeLanguages" 
+            value="<%= country.nativeLanguages %>" 
+            autocomplete="off"
+          >
+        </label>
+        <div class="submit-button">
+          <button type="submit">Edit <%= country.country %></button>
+        </div>
+      </form>
+    </div>
+  </div>
 </section>
 
 <%- include('../partials/footer') %>

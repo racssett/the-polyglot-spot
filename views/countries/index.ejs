@@ -3,28 +3,32 @@
 <%- include('../partials/nav') %>
 
 <section class="countries">
-  <h1 class="title">Countries</h1>
-  <ul>
-    <% countries.forEach(country => { %>
-      <li>
-        <a href="/countries/<%= country._id %>"><%= country.country %></a>
-      </li>
-    <% }) %>
-  </ul>
-  <% if (user) { %> 
-    <h2 class="title">Add a Country</h2>
-    <form action="/countries" method="POST">
-      <label>
-        Country:
-        <input type="text" name="country" autocomplete="off">
-      </label>
-      <label>
-        Native Languages:
-        <input type="text" name="nativeLanguages" autocomplete="off">
-      </label>
-      <button type="submit">Add Country</button>
-    </form>
-  <% } %> 
+  <div class="country-container">
+    <h1 class="title">Countries</h1>
+    <ul>
+      <% countries.forEach(country => { %>
+        <li>
+          <a href="/countries/<%= country._id %>"><%= country.country %></a>
+        </li>
+      <% }) %>
+    </ul>
+    <% if (user) { %> 
+      <h2 class="title" id="add-country">Add a Country</h2>
+      <form action="/countries" method="POST">
+        <label>
+          Country:
+          <input type="text" name="country" autocomplete="off">
+        </label>
+        <label>
+          Native Languages:
+          <input type="text" name="nativeLanguages" autocomplete="off">
+        </label>
+        <div class="submit-button">
+          <button type="submit">Add Country</button>
+        </div>
+      </form>
+    <% } %>
+  </div>
 </section>
 
 <%- include('../partials/footer') %>
