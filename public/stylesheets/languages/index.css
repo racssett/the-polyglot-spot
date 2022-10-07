@@ -45,6 +45,7 @@ body {
   margin: 10px 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-width: 500px;
 }
 
 .language-info > div {
