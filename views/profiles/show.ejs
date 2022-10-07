@@ -11,31 +11,6 @@
     >
   </div>
   <h1 class="title"><%= profile.name %></h1>
-  <% if (isSelf) { %>
-    <h2 class="title-show">Add a Language:</h2>
-    <form action="/profiles/<%= profile._id %>/languages" method="POST">
-      <label>
-        Language:
-        <input type="text" name="language" autocomplete="off" required>
-      </label>
-      <label>
-        Proficiency:
-        <input type="text" name="proficiency" autocomplete="off" required>
-      </label>
-      <label>
-        Time:
-        <input type="number" name="time" autocomplete="off" required>
-      </label>
-      <select name="unit">
-        <option value="day">days</option>
-        <option value="month">month</option>
-        <option value="months">months</option>
-        <option value="year">year</option>
-        <option value="years">years</option>
-      </select>
-      <button type="submit">Add Language</button>
-    </form>
-  <% } %>
   <% if (profile.languagesSpoken.length) { %>
     <h2>
       <%= isSelf ? "You are a language learner! Here's what you're studying:" : `${profile.name} is a language learner! Here's what they're studying:` %>
@@ -58,6 +33,35 @@
     <h2>
       <%= isSelf ? "You haven't started your language journey yet." : `${profile.name} hasn't started their language journey yet.` %>  
     </h2>
+  <% } %>
+    <% if (isSelf) { %>
+    <h2 id="add-profile-language" class="title-show">Add a Language:</h2>
+    <form action="/profiles/<%= profile._id %>/languages" method="POST">
+      <label>
+        Language:
+        <input type="text" name="language" autocomplete="off" required>
+      </label>
+      <label>
+        Proficiency:
+        <input type="text" name="proficiency" autocomplete="off" required>
+      </label>
+      <div class="time-container">
+        <label>
+          Time:
+          <input type="number" name="time" autocomplete="off" required>
+        </label>
+        <select name="unit">
+          <option value="day">days</option>
+          <option value="month">month</option>
+          <option value="months">months</option>
+          <option value="year">year</option>
+          <option value="years">years</option>
+        </select>
+      </div>
+      <div class="submit-button">
+        <button type="submit">Add Language</button>
+      </div>
+    </form>
   <% } %>
 </main>
 
