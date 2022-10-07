@@ -2,6 +2,7 @@ import { Country } from "../models/country.js";
 
 function index(req, res){
   Country.find({})
+  .sort({country : 1})
   .then(countries => {
     res.render('countries/index', {
       countries,

@@ -2,6 +2,7 @@ import { Language } from "../models/language.js"
 
 function index(req, res){
   Language.find({})
+  .sort({language : 1})
   .then(languages => {
     res.render('languages/index', {
       languages,
